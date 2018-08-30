@@ -63,7 +63,9 @@ git clone ${GIT_REPOSITORY_URL}
 1. If not set, export `JAVA_HOME`.
 
     ```console
-    if [ -z "${JAVA_HOME}" ] ; then export JAVA_HOME=$(readlink -nf $(which java) | xargs dirname | xargs dirname | xargs dirname) ; fi
+    if [ -z "${JAVA_HOME}" ]; \
+      then export JAVA_HOME=$(readlink -nf $(which java) | xargs dirname | xargs dirname | xargs dirname); \
+    fi
     ```
 
 1. Run demo
