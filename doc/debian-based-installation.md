@@ -36,28 +36,28 @@ git clone ${GIT_REPOSITORY_URL}
 
 1. Download [Senzing_API.tgz](https://s3.amazonaws.com/public-read-access/SenzingComDownloads/Senzing_API.tgz)
 
-```console
-wget \
-  --show-progress \
-  --output-document ${REPOSITORY_DIR}/Senzing_API.tgz \
-  https://s3.amazonaws.com/public-read-access/SenzingComDownloads/Senzing_API.tgz
-```
+    ```console
+    wget \
+      --show-progress \
+      --output-document ${REPOSITORY_DIR}/Senzing_API.tgz \
+      https://s3.amazonaws.com/public-read-access/SenzingComDownloads/Senzing_API.tgz
+    ```
 
 1. Create directory for Senzing.
 
-```console
-sudo mkdir ${SENZING_DIR}
-```
+    ```console
+    sudo mkdir ${SENZING_DIR}
+    ```
 
 1. Uncompress `Senzing_API.tgz` into Senzing directory.
 
-```console
-sudo tar \
-  --extract \
-  --verbose \
-  --directory=${SENZING_DIR} \
-  --file=${REPOSITORY_DIR}/Senzing_API.tgz 
-```
+    ```console
+    sudo tar \
+      --extract \
+      --verbose \
+      --directory=${SENZING_DIR} \
+      --file=${REPOSITORY_DIR}/Senzing_API.tgz 
+    ```
 
 ## Run Demo
 
