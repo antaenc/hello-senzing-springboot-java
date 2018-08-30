@@ -48,7 +48,7 @@ To test the service, open a web-browser (e.g. FireFox, Chrome, Safari, MS Explor
     ```
 
 1. Visit [Swagger / OpenAPI editor](https://editor.swagger.io)
-    1. Editor > File > Import File > Browse...
+    1. [Editor](https://editor.swagger.io) > File > Import File > Browse...
         1. Choose ${REPOSITORY_DIR}/Senzing_API.json
 
 ## References
