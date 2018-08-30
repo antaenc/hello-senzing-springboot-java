@@ -8,6 +8,7 @@ The following instruction are meant to be "copy-and-paste" to install and demons
 1. [Set environment variables](#set-environment-variables)
 1. [Clone repository](#clone-repository)
 1. [Install Senzing](#install-senzing)
+1. [Build demo](#build-demo)
 1. [Run demo](#run-demo)
 
 ## Prerequisites
@@ -24,7 +25,6 @@ sudo apt-get -y install \
 ```
 
 A Java Development Kit (JDK) will be needed.
-
 Determine if a JDK is installed. Example:
 
 ```console
@@ -72,7 +72,7 @@ git clone ${GIT_REPOSITORY_URL}
 
 ## Install Senzing
 
-1. Download [Senzing_API.tgz](https://s3.amazonaws.com/public-read-access/SenzingComDownloads/Senzing_API.tgz)
+1. Download [Senzing_API.tgz](https://s3.amazonaws.com/public-read-access/SenzingComDownloads/Senzing_API.tgz).
 
     ```console
     wget \
@@ -101,7 +101,7 @@ git clone ${GIT_REPOSITORY_URL}
       --file=${REPOSITORY_DIR}/Senzing_API.tgz
     ```
 
-1. Change permissions
+1. Change permissions for database.
 
     ```console
     sudo chmod -R 777 ${SENZING_DIR}/g2/sqldb
@@ -119,7 +119,7 @@ git clone ${GIT_REPOSITORY_URL}
       -Dpackaging=jar
     ```
 
-## Run Demo
+## Build Demo
 
 1. Build JAR file.
 
@@ -127,6 +127,8 @@ git clone ${GIT_REPOSITORY_URL}
     cd ${REPOSITORY_DIR}
     mvn package
     ```
+
+## Run Demo
 
 1. Run demo.
 
