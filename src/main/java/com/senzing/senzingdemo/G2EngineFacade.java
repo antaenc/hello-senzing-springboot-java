@@ -2,7 +2,6 @@ package com.senzing.senzingdemo;
 
 import com.senzing.g2.engine.G2Engine;
 import com.senzing.g2.engine.G2JNI;
-import com.senzing.g2.engine.Result; //this is new!
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PreDestroy;
@@ -38,25 +37,11 @@ public class G2EngineFacade {
     return engine.stats();
   }
 
-  public long getActiveConfigID() {
-    Result<Long> configID = new Result<>();
-    int resultCode = engine.getActiveConfigID(configID);
-    checkForError(resultCode, "getActiveConfigID");
-    return configID.getValue();
-  }
-
   public String exportConfig() {
     StringBuffer response = new StringBuffer();
     int resultCode = engine.exportConfig(response);
     checkForError(resultCode, "exportConfig");
     return response.toString();
-  }
-
-  public long getRepositoryLastModifiedTime() {
-    Result<Long> lastModifiedTime = new Result<>();
-    int resultCode = engine.getRepositoryLastModifiedTime(lastModifiedTime);
-    checkForError(resultCode, "getRepositoryLastModifiedTime");
-    return lastModifiedTime.getValue();
   }
 
   public void addRecord(String dataSourceCode, String recordID, String record) {

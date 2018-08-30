@@ -24,22 +24,10 @@ public class EngineController {
     return engine.stats();
   }
 
-  @GetMapping(value = "/get-active-config-id")
-  @ApiOperation(value = "Retrieve engine's active configuration id")
-  public long getActiveConfigID() {
-    return engine.getActiveConfigID();
-  }
-
   @GetMapping(value = "/export-config")
   @ApiOperation(value = "Retrieve engine's export configuration details")
   public String exportConfig() {
     return engine.exportConfig();
-  }
-
-  @GetMapping(value = "/get-repository-last-modified-time")
-  @ApiOperation(value = "Retrieve repository's last modified time")
-  public long getRepositoryLastModifiedTime() {
-    return engine.getRepositoryLastModifiedTime();
   }
 
   @PostMapping(value = "/add-record/{dataSource}/{recordID}")
