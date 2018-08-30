@@ -1,6 +1,5 @@
 # Debian-based installation
 
-
 ## Pre-requisites
 
 ```console
@@ -56,13 +55,20 @@ git clone ${GIT_REPOSITORY_URL}
       --extract \
       --verbose \
       --directory=${SENZING_DIR} \
-      --file=${REPOSITORY_DIR}/Senzing_API.tgz 
+      --file=${REPOSITORY_DIR}/Senzing_API.tgz
     ```
 
 ## Run Demo
 
-```console
-cd ${REPOSITORY_DIR}
-./mvnw
+1. If not set, export `JAVA_HOME`.
 
-```
+    ```console
+    if [ -z "${JAVA_HOME}" ] ; then export JAVA_HOME=$(readlink -nf $(which java) | xargs dirname | xargs dirname | xargs dirname) ; fi
+    ```
+
+1. Run demo
+
+    ```console
+    cd ${REPOSITORY_DIR}
+    ./mvnw
+    ```
