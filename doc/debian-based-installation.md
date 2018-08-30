@@ -1,6 +1,10 @@
 # Debian-based installation
 
+The following instruction are meant to be "cut-and-paste" to install and demonstrate.
+
 ## Pre-requisites
+
+These programs will be used in the installation and demonstration.
 
 ```console
 sudo apt-get -y install \
