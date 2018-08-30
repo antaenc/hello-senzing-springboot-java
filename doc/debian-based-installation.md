@@ -22,6 +22,22 @@ sudo apt-get -y install \
   wget
 ```
 
+A Java Development Kit (JDK) will be needed.
+
+Determine if a JDK is installed. Example:
+
+```console
+$ javac -version
+javac 1.8.0_181
+```
+
+If a JDK is not installed, you can install with the following command
+
+```console
+sudo apt-get -y install \
+  openjdk-8-jdk-headless
+```
+
 ## Set Environment variables
 
 These variables may be modified, but do not need to be modified.
@@ -33,6 +49,14 @@ export REPOSITORY_DIR="${PROJECT_DIR}/senzing-demo-1"
 export GIT_REPOSITORY_URL="https://github.com/docktermj/senzing-demo-1.git"
 export SENZING_DIR=/opt/senzing
 ```
+
+1. If not set, export `JAVA_HOME`.
+
+    ```console
+    if [ -z "${JAVA_HOME}" ]; \
+      then export JAVA_HOME=$(readlink -nf $(which java) | xargs dirname | xargs dirname | xargs dirname); \
+    fi
+    ```
 
 ## Clone repository
 
@@ -71,15 +95,19 @@ git clone ${GIT_REPOSITORY_URL}
       --file=${REPOSITORY_DIR}/Senzing_API.tgz
     ```
 
-## Run Demo
-
-1. If not set, export `JAVA_HOME`.
+1. Copy jar file into maven repository.
 
     ```console
-    if [ -z "${JAVA_HOME}" ]; \
-      then export JAVA_HOME=$(readlink -nf $(which java) | xargs dirname | xargs dirname | xargs dirname); \
-    fi
+    cd ${REPOSITORY_DIR}
+    mvn install:install-file \
+      -Dfile=${SENZING_DIR}/g2/lib/g2.jar \
+      -DgroupId=com.senzing \
+      -DartifactId=g2 \
+      -Dversion=1.0.0-SNAPSHOT \
+      -Dpackaging=jar
     ```
+
+## Run Demo
 
 1. Run demo
 
