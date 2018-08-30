@@ -19,6 +19,7 @@ They need to be installed first.
 sudo apt-get -y install \
   git-core \
   maven \
+  sqlite \
   wget
 ```
 
@@ -31,7 +32,7 @@ $ javac -version
 javac 1.8.0_181
 ```
 
-If a JDK is not installed, you can install with the following command
+If a JDK is not installed, you can install with the following command:
 
 ```console
 sudo apt-get -y install \
@@ -48,6 +49,7 @@ export PROJECT_DIR=~/docktermj.git
 export REPOSITORY_DIR="${PROJECT_DIR}/senzing-demo-1"
 export GIT_REPOSITORY_URL="https://github.com/docktermj/senzing-demo-1.git"
 export SENZING_DIR=/opt/senzing
+export LD_LIBRARY_PATH=${SENZING_DIR}/g2/lib:${SENZING_DIR}/g2/lib/debian:$LD_LIBRARY_PATH
 ```
 
 1. If not set, export `JAVA_HOME`.
@@ -113,7 +115,7 @@ git clone ${GIT_REPOSITORY_URL}
 
     ```console
     cd ${REPOSITORY_DIR}
-    mvn package
+    mvn -Dmaven.test.skip=true package
     ```
 
 1. Run demo.
@@ -122,3 +124,4 @@ git clone ${GIT_REPOSITORY_URL}
     cd ${REPOSITORY_DIR}
     java -jar target/senzing-demo-0.0.1-SNAPSHOT.jar    
     ```
+       
