@@ -109,9 +109,16 @@ git clone ${GIT_REPOSITORY_URL}
 
 ## Run Demo
 
-1. Run demo
+1. Build JAR file.
 
     ```console
     cd ${REPOSITORY_DIR}
-    ./mvnw
+    mvn package
+    ```
+
+1. Run demo.
+
+    ```console
+    cd ${REPOSITORY_DIR}
+    java -jar target/senzing-demo-0.0.1-SNAPSHOT.jar    
     ```
