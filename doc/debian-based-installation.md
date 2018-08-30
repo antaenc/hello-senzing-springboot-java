@@ -1,10 +1,11 @@
 # Debian-based installation
 
-The following instruction are meant to be "cut-and-paste" to install and demonstrate.
+The following instruction are meant to be "copy-and-paste" to install and demonstrate.
 
 ## Pre-requisites
 
-These programs will be used in the installation and demonstration.
+These programs will be used in the installation and demonstration of Senzing.
+They need to be installed first.
 
 ```console
 sudo apt-get -y install \
