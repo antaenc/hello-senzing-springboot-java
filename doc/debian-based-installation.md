@@ -2,6 +2,14 @@
 
 The following instruction are meant to be "copy-and-paste" to install and demonstrate.
 
+## Overview
+
+1. [Install pre-requisites](#pre-requisites)
+1. [Set environment variables](#set-environment-variables)
+1. [Clone repository](#clone-repository)
+1. [Install Senzing](#install-senzing)
+1. [Run demo](#run-demo)
+
 ## Pre-requisites
 
 These programs will be used in the installation and demonstration of Senzing.
@@ -36,7 +44,7 @@ cd  ${PROJECT_DIR}
 git clone ${GIT_REPOSITORY_URL}
 ```
 
-## Install Senzing_API.tgz
+## Install Senzing
 
 1. Download [Senzing_API.tgz](https://s3.amazonaws.com/public-read-access/SenzingComDownloads/Senzing_API.tgz)
 
