@@ -130,7 +130,7 @@ git clone ${GIT_REPOSITORY_URL}
 
 ## Run Demo
 
-1. Run demo.
+1. Run demo service.
 
     ```console
     cd ${REPOSITORY_DIR}
