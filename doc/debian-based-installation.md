@@ -4,13 +4,13 @@ The following instruction are meant to be "copy-and-paste" to install and demons
 
 ## Overview
 
-1. [Install pre-requisites](#pre-requisites)
+1. [Install prerequisites](#prerequisites)
 1. [Set environment variables](#set-environment-variables)
 1. [Clone repository](#clone-repository)
 1. [Install Senzing](#install-senzing)
 1. [Run demo](#run-demo)
 
-## Pre-requisites
+## Prerequisites
 
 These programs will be used in the installation and demonstration of Senzing.
 They need to be installed first.
@@ -46,8 +46,8 @@ The variables are used throughout the installation procedure.
 
 ```console
 export PROJECT_DIR=~/docktermj.git
-export REPOSITORY_DIR="${PROJECT_DIR}/senzing-demo-1"
-export GIT_REPOSITORY_URL="https://github.com/docktermj/senzing-demo-1.git"
+export REPOSITORY_DIR="${PROJECT_DIR}/hello-senzing-springboot-java"
+export GIT_REPOSITORY_URL="https://github.com/docktermj/hello-senzing-springboot-java.git"
 export SENZING_DIR=/opt/senzing
 export LD_LIBRARY_PATH=${SENZING_DIR}/g2/lib:${SENZING_DIR}/g2/lib/debian:$LD_LIBRARY_PATH
 ```
@@ -93,9 +93,19 @@ git clone ${GIT_REPOSITORY_URL}
     sudo tar \
       --extract \
       --verbose \
+      --owner=root \
+      --group=root \
+      --no-same-owner \
+      --no-same-permissions \
       --directory=${SENZING_DIR} \
       --file=${REPOSITORY_DIR}/Senzing_API.tgz
     ```
+
+1. Change permissions
+
+    ```console
+    sudo chmod -R 777 ${SENZING_DIR}/g2/sqldb
+    ````
 
 1. Copy jar file into maven repository.
 
@@ -115,13 +125,12 @@ git clone ${GIT_REPOSITORY_URL}
 
     ```console
     cd ${REPOSITORY_DIR}
-    mvn -Dmaven.test.skip=true package
+    mvn package
     ```
 
 1. Run demo.
 
     ```console
     cd ${REPOSITORY_DIR}
-    java -jar target/senzing-demo-0.0.1-SNAPSHOT.jar    
+    java -jar target/senzing-demo-0.0.1-SNAPSHOT.jar
     ```
-       

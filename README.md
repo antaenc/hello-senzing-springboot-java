@@ -1,15 +1,13 @@
-# senzing-demo-1
+# Hello Senzing Spring-boot for Java
 
+## Overview
 
+In this demonstration....
 
+## Installation
 
-1. Download [Senzing_API.tgz](https://s3.amazonaws.com/public-read-access/SenzingComDownloads/Senzing_API.tgz)
-```console
-wget \
-  --show-progress \
-  --output-document ~/Senzing_API.tgz \
-  https://s3.amazonaws.com/public-read-access/SenzingComDownloads/Senzing_API.tgz
-``
+1. [Debian-based installation](doc/debian-based-installation.md) - For Ubuntu and [others](https://en.wikipedia.org/wiki/List_of_Linux_distributions#Debian-based)
+1. [RPM-based installation](doc/rpm-based-installation.md) - For Red Hat, CentOS, openSuse and [others](https://en.wikipedia.org/wiki/List_of_Linux_distributions#RPM-based).
 
 ## References
 
