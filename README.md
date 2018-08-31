@@ -36,7 +36,9 @@ To test the service, open a web-browser (e.g. FireFox, Chrome, Safari, MS Explor
     ```console
     export PROJECT_DIR=~/docktermj.git
     export REPOSITORY_DIR="${PROJECT_DIR}/hello-senzing-springboot-java"
+    export SENZING_DEMO_DATASOURCE="test-datasource"
     export SENZING_DEMO_URL="http://localhost:8080"
+    export SENZING_DIR=/opt/senzing    
     ```
 
 1. Download OpenAPI document.
@@ -64,6 +66,14 @@ To test the service, open a web-browser (e.g. FireFox, Chrome, Safari, MS Explor
     ```console
     curl -X GET \
       ${SENZING_DEMO_URL}/stats | jq
+    ```
+
+1. Create a new datasource.
+
+    ```console
+    sed -i.$(date +%s) \
+      -e 's/"CFG_DSRC": [/"CFG_DSRC": [ {"DSRC_ID": 9999,"DSRC_CODE": "${SENZING_DEMO_DATASOURCE}","DSRC_DESC": "Test-2","DSRC_RELY": 1,"RETENTION_LEVEL": "Remember","CONVERSATIONAL": 0},/' \
+      ${SENZING_DIR}/g2/data/g2config.json
     ```
 
 1. Exercise a number of APIs via `curl` command.
