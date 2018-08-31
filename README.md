@@ -15,19 +15,18 @@ These instructions will install and run the web server.
 
 ### Find port
 
-Once the service is running, the end of the log shown in standard out (STDOUT) may look something like this:
+Normally the service runs on port 8080.
+To verify this, the end of the service log sent to standard out (STDOUT) will have the port information.
 
 ```console
 YYYY-MM-DD HH:MM:SS.sss  INFO 8032 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
 YYYY-MM-DD HH:MM:SS.sss  INFO 8032 --- [           main] c.s.senzingdemo.SenzingDemoApplication   : Started SenzingDemoApplication in 11.077 seconds (JVM running for 12.172)
 ```
 
-The import information is that the service is running on port `8080`.
-
 ### Test port
 
 To test the service, open a web-browser (e.g. FireFox, Chrome, Safari, MS Explorer, Opera) to
-`http://localhost:8080/stats`,  replacing `localhost` if needed.
+`http://localhost:8080/stats`, replacing `localhost` if needed.
 
 ### View OpenAPI document
 
