@@ -4,7 +4,7 @@
 
 In this demonstration....
 
-## Install and Run
+## Install and run service
 
 These instructions will install and run the web server.
 
@@ -38,7 +38,7 @@ To test the service, open a web-browser (e.g. FireFox, Chrome, Safari, MS Explor
     export REPOSITORY_DIR="${PROJECT_DIR}/hello-senzing-springboot-java"
     export SENZING_DEMO_DATASOURCE="TEST"
     export SENZING_DEMO_URL="http://localhost:8080"
-    export SENZING_DIR=/opt/senzing    
+    export SENZING_DIR=/opt/senzing
     ```
 
 1. Download OpenAPI document.
@@ -67,28 +67,29 @@ To test the service, open a web-browser (e.g. FireFox, Chrome, Safari, MS Explor
     curl -X GET \
       ${SENZING_DEMO_URL}/stats | jq
     ```
-
-1. Create a new datasource.
-
-    ```console
-    export JSON_BEFORE='\"CFG_DSRC\": \['
-    export JSON_AFTER='\"CFG_DSRC\": \[{\"DSRC_ID\": 9999,\"DSRC_CODE\": \"'${SENZING_DEMO_DATASOURCE}'\",\"DSRC_DESC\": \"'${SENZING_DEMO_DATASOURCE}'\",\"DSRC_RELY\": 1,\"RETENTION_LEVEL\": \"Remember\",\"CONVERSATIONAL\": 0},'
-    
-    sudo sed -i.$(date +%s) \
-      -e "s|${JSON_BEFORE}|${JSON_AFTER}|" \
-      ${SENZING_DIR}/g2/data/g2config.json
-    ```
-
 1. Exercise a number of APIs via `curl` command.
 
     ```console
     cd ${REPOSITORY_DIR}/doc
     ./curl-commands.sh > curl-commands.out 2>&1
     ```
-    
+
     View results in ${REPOSITORY_DIR}/doc/curl-commands.out
 
 ## References
 
 1. [Spring Boot](http://spring.io/projects/spring-boot)
     1. [Spring initializr](https://start.spring.io/)
+
+## Work-in-progress
+
+1. Create a new datasource.
+
+    ```console
+    export JSON_BEFORE='\"CFG_DSRC\": \['
+    export JSON_AFTER='\"CFG_DSRC\": \[{\"DSRC_ID\": 9999,\"DSRC_CODE\": \"'${SENZING_DEMO_DATASOURCE}'\",\"DSRC_DESC\": \"'${SENZING_DEMO_DATASOURCE}'\",\"DSRC_RELY\": 1,\"RETENTION_LEVEL\": \"Remember\",\"CONVERSATIONAL\": 0},'
+
+    sudo sed -i.$(date +%s) \
+      -e "s|${JSON_BEFORE}|${JSON_AFTER}|" \
+      ${SENZING_DIR}/g2/data/g2config.json
+    ```

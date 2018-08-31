@@ -138,7 +138,7 @@ git clone ${GIT_REPOSITORY_URL}
 
     ```console
     sudo firewall-cmd --permanent --add-port=8080/tcp
-    sudo firewall-cmd --reload    
+    sudo firewall-cmd --reload
     ```
 1. Run demo service.
 
