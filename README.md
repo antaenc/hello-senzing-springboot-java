@@ -36,7 +36,7 @@ To test the service, open a web-browser (e.g. FireFox, Chrome, Safari, MS Explor
     ```console
     export PROJECT_DIR=~/docktermj.git
     export REPOSITORY_DIR="${PROJECT_DIR}/hello-senzing-springboot-java"
-    export DEMO_URL="http://localhost:8080"
+    export SENZING_DEMO_URL="http://localhost:8080"
     ```
 
 1. Download OpenAPI document.
@@ -44,12 +44,36 @@ To test the service, open a web-browser (e.g. FireFox, Chrome, Safari, MS Explor
     ```console
     curl -X GET \
       --output ${REPOSITORY_DIR}/Senzing_API.json \
-      ${DEMO_URL}/v2/api-docs
+      ${SENZING_DEMO_URL}/v2/api-docs
     ```
 
 1. Visit [Swagger / OpenAPI editor](https://editor.swagger.io)
     1. [Editor](https://editor.swagger.io) > File > Import File > Browse...
         1. Choose ${REPOSITORY_DIR}/Senzing_API.json
+
+### Try the API
+
+1. Get the Senzing workload statistics
+
+    ```console
+    curl -X GET \
+      ${SENZING_DEMO_URL}/stats
+    ```
+1. Pretty printing.  If you would like the JSON response formatted, you can pipe the output to `jq`.  Example:
+
+    ```console
+    curl -X GET \
+      ${SENZING_DEMO_URL}/stats | jq
+    ```
+
+1. Exercise a number of APIs via `curl` command.
+
+    ```console
+    cd ${REPOSITORY_DIR}/doc
+    ./curl-commands.sh > curl-commands.out 2>&1
+    ```
+    
+    View results in ${REPOSITORY_DIR}/doc/curl-commands.out
 
 ## References
 

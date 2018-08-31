@@ -10,6 +10,7 @@ The following instruction are meant to be "copy-and-paste" to install and demons
 1. [Install Senzing](#install-senzing)
 1. [Build demo](#build-demo)
 1. [Run demo](#run-demo)
+1. [Clean up](#clean-up)
 
 ## Prerequisites
 
@@ -18,10 +19,11 @@ They need to be installed first.
 
 ```console
 sudo apt-get -y install \
+  curl \
   git-core \
+  jq \
   maven \
-  sqlite \
-  wget
+  sqlite
 ```
 
 A Java Development Kit (JDK) will be needed.
@@ -75,9 +77,8 @@ git clone ${GIT_REPOSITORY_URL}
 1. Download [Senzing_API.tgz](https://s3.amazonaws.com/public-read-access/SenzingComDownloads/Senzing_API.tgz).
 
     ```console
-    wget \
-      --show-progress \
-      --output-document ${REPOSITORY_DIR}/Senzing_API.tgz \
+    curl -X GET \
+      --output ${REPOSITORY_DIR}/Senzing_API.tgz \
       https://s3.amazonaws.com/public-read-access/SenzingComDownloads/Senzing_API.tgz
     ```
 
@@ -135,4 +136,18 @@ git clone ${GIT_REPOSITORY_URL}
     ```console
     cd ${REPOSITORY_DIR}
     java -jar target/senzing-demo-0.0.1-SNAPSHOT.jar
+    ```
+
+1. [Test the service](../README.md#test).
+
+## Clean up
+
+After the demonstration is complete,
+you may want to remove all files used in the demonstration.
+
+1. Remove all files.
+
+    ```console
+    sudo rm -rf ${SENZING_DIR}
+    rm -rf ${REPOSITORY_DIR}
     ```
