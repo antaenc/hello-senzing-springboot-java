@@ -36,7 +36,7 @@ To test the service, open a web-browser (e.g. FireFox, Chrome, Safari, MS Explor
     ```console
     export PROJECT_DIR=~/docktermj.git
     export REPOSITORY_DIR="${PROJECT_DIR}/hello-senzing-springboot-java"
-    export SENZING_DEMO_DATASOURCE="test-datasource"
+    export SENZING_DEMO_DATASOURCE="TEST"
     export SENZING_DEMO_URL="http://localhost:8080"
     export SENZING_DIR=/opt/senzing    
     ```
