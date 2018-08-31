@@ -1,6 +1,7 @@
 # RPM-based installation
 
 The following instruction are meant to be "copy-and-paste" to install and demonstrate.
+These instructions have been tested with CentOS 7.2.
 
 ## Overview
 
@@ -133,6 +134,12 @@ git clone ${GIT_REPOSITORY_URL}
 
 ## Run Demo
 
+1. Open port 8080
+
+    ```console
+    sudo firewall-cmd --permanent --add-port=8080/tcp
+    sudo firewall-cmd --reload    
+    ```
 1. Run demo service.
 
     ```console
