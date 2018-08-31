@@ -71,8 +71,11 @@ To test the service, open a web-browser (e.g. FireFox, Chrome, Safari, MS Explor
 1. Create a new datasource.
 
     ```console
-    sed -i.$(date +%s) \
-      -e 's/"CFG_DSRC": [/"CFG_DSRC": [ {"DSRC_ID": 9999,"DSRC_CODE": "${SENZING_DEMO_DATASOURCE}","DSRC_DESC": "Test-2","DSRC_RELY": 1,"RETENTION_LEVEL": "Remember","CONVERSATIONAL": 0},/' \
+    export JSON_BEFORE='\"CFG_DSRC\": \['
+    export JSON_AFTER='\"CFG_DSRC\": \[{\"DSRC_ID\": 9999,\"DSRC_CODE\": \"'${SENZING_DEMO_DATASOURCE}'\",\"DSRC_DESC\": \"'${SENZING_DEMO_DATASOURCE}'\",\"DSRC_RELY\": 1,\"RETENTION_LEVEL\": \"Remember\",\"CONVERSATIONAL\": 0},'
+    
+    sudo sed -i.$(date +%s) \
+      -e "s|${JSON_BEFORE}|${JSON_AFTER}|" \
       ${SENZING_DIR}/g2/data/g2config.json
     ```
 

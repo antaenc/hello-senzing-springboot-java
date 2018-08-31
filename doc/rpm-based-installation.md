@@ -18,6 +18,8 @@ These programs will be used in the installation and demonstration of Senzing.
 They need to be installed first.
 
 ```console
+sudo yum install -y epel-release
+
 sudo yum -y install \
   curl \
   git \
