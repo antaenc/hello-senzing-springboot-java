@@ -57,7 +57,7 @@ To test the service, open a web-browser (e.g. FireFox, Chrome, Safari, MS Explor
     curl -X GET \
       ${SENZING_DEMO_URL}/stats | jq
     ```
-1. Exercise a number of APIs via `curl` command.
+1. Exercise a number of APIs via `curl` command in [curl-command.sh](curl-commands.sh).
 
     ```console
     cd ${GIT_REPOSITORY_DIR}/doc
