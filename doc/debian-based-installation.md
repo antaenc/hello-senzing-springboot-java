@@ -47,8 +47,8 @@ These variables may be modified, but do not need to be modified.
 The variables are used throughout the installation procedure.
 
 ```console
-export PROJECT_DIR=~/docktermj.git
-export REPOSITORY_DIR="${PROJECT_DIR}/hello-senzing-springboot-java"
+export GIT_ACCOUNT_DIR=~/docktermj.git
+export GIT_REPOSITORY_DIR="${GIT_ACCOUNT_DIR}/hello-senzing-springboot-java"
 export GIT_REPOSITORY_URL="https://github.com/docktermj/hello-senzing-springboot-java.git"
 export SENZING_DIR=/opt/senzing
 export LD_LIBRARY_PATH=${SENZING_DIR}/g2/lib:${SENZING_DIR}/g2/lib/debian:$LD_LIBRARY_PATH
@@ -67,8 +67,8 @@ export LD_LIBRARY_PATH=${SENZING_DIR}/g2/lib:${SENZING_DIR}/g2/lib/debian:$LD_LI
 Get repository.
 
 ```console
-mkdir --parents ${PROJECT_DIR}
-cd  ${PROJECT_DIR}
+mkdir --parents ${GIT_ACCOUNT_DIR}
+cd  ${GIT_ACCOUNT_DIR}
 git clone ${GIT_REPOSITORY_URL}
 ```
 
@@ -78,7 +78,7 @@ git clone ${GIT_REPOSITORY_URL}
 
     ```console
     curl -X GET \
-      --output ${REPOSITORY_DIR}/Senzing_API.tgz \
+      --output ${GIT_REPOSITORY_DIR}/Senzing_API.tgz \
       https://s3.amazonaws.com/public-read-access/SenzingComDownloads/Senzing_API.tgz
     ```
 
@@ -99,7 +99,7 @@ git clone ${GIT_REPOSITORY_URL}
       --no-same-owner \
       --no-same-permissions \
       --directory=${SENZING_DIR} \
-      --file=${REPOSITORY_DIR}/Senzing_API.tgz
+      --file=${GIT_REPOSITORY_DIR}/Senzing_API.tgz
     ```
 
 1. Change permissions for database.
@@ -111,7 +111,7 @@ git clone ${GIT_REPOSITORY_URL}
 1. Copy jar file into maven repository.
 
     ```console
-    cd ${REPOSITORY_DIR}
+    cd ${GIT_REPOSITORY_DIR}
     mvn install:install-file \
       -Dfile=${SENZING_DIR}/g2/lib/g2.jar \
       -DgroupId=com.senzing \
@@ -125,7 +125,7 @@ git clone ${GIT_REPOSITORY_URL}
 1. Build JAR file.
 
     ```console
-    cd ${REPOSITORY_DIR}
+    cd ${GIT_REPOSITORY_DIR}
     mvn package
     ```
 
@@ -134,7 +134,7 @@ git clone ${GIT_REPOSITORY_URL}
 1. Run demo service.
 
     ```console
-    cd ${REPOSITORY_DIR}
+    cd ${GIT_REPOSITORY_DIR}
     java -jar target/senzing-demo-0.0.1-SNAPSHOT.jar
     ```
 
@@ -149,5 +149,5 @@ you may want to remove all files used in the demonstration.
 
     ```console
     sudo rm -rf ${SENZING_DIR}
-    rm -rf ${REPOSITORY_DIR}
+    rm -rf ${GIT_REPOSITORY_DIR}
     ```

@@ -33,31 +33,17 @@ YYYY-MM-DD HH:MM:SS.sss  INFO 8032 --- [           main] c.s.senzingdemo.Senzing
 To test the service, open a web-browser (e.g. FireFox, Chrome, Safari, MS Explorer, Opera) to
 `http://localhost:8080/stats`, replacing `localhost` if needed.
 
-### View OpenAPI document
+### Try the API
 
 1. Set environment variables.
 
     ```console
-    export PROJECT_DIR=~/docktermj.git
-    export REPOSITORY_DIR="${PROJECT_DIR}/hello-senzing-springboot-java"
+    export GIT_ACCOUNT_DIR=~/docktermj.git
+    export GIT_REPOSITORY_DIR="${GIT_ACCOUNT_DIR}/hello-senzing-springboot-java"
     export SENZING_DEMO_DATASOURCE="TEST"
     export SENZING_DEMO_URL="http://localhost:8080"
     export SENZING_DIR=/opt/senzing
     ```
-
-1. Download OpenAPI document.
-
-    ```console
-    curl -X GET \
-      --output ${REPOSITORY_DIR}/Senzing_API.json \
-      ${SENZING_DEMO_URL}/v2/api-docs
-    ```
-
-1. Visit [Swagger / OpenAPI editor](https://editor.swagger.io)
-    1. [Editor](https://editor.swagger.io) > File > Import File > Browse...
-        1. Choose ${REPOSITORY_DIR}/Senzing_API.json
-
-### Try the API
 
 1. Get the Senzing workload statistics
 
@@ -74,11 +60,11 @@ To test the service, open a web-browser (e.g. FireFox, Chrome, Safari, MS Explor
 1. Exercise a number of APIs via `curl` command.
 
     ```console
-    cd ${REPOSITORY_DIR}/doc
+    cd ${GIT_REPOSITORY_DIR}/doc
     ./curl-commands.sh > curl-commands.out 2>&1
     ```
 
-    View results in ${REPOSITORY_DIR}/doc/curl-commands.out
+    View results in ${GIT_REPOSITORY_DIR}/doc/curl-commands.out
 
 ## References
 
