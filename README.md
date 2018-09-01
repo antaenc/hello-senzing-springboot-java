@@ -4,14 +4,14 @@
 
 This demonstration shows how to wrap Senzing with Spring-boot to create an HTTP API.
 
-The resulting HTTP API is documented in 
+The resulting HTTP API is documented in
 [OpenAPI.json](https://raw.githubusercontent.com/docktermj/hello-senzing-springboot-java/master/doc/OpenAPI.json)
-and can be viewed in the 
+and can be viewed in the
 [Swagger editor](http://editor.swagger.io/?url=https://raw.githubusercontent.com/docktermj/hello-senzing-springboot-java/master/doc/OpenAPI.json).
 
 ## Install and run service
 
-These instructions will install and run the web server.
+These instructions will install and run the web service.
 
 1. [Debian-based installation](doc/debian-based-installation.md) - For Ubuntu and [others](https://en.wikipedia.org/wiki/List_of_Linux_distributions#Debian-based)
 1. [RPM-based installation](doc/rpm-based-installation.md) - For Red Hat, CentOS, openSuse and [others](https://en.wikipedia.org/wiki/List_of_Linux_distributions#RPM-based).
@@ -45,13 +45,13 @@ To test the service, open a web-browser (e.g. FireFox, Chrome, Safari, MS Explor
     export SENZING_DIR=/opt/senzing
     ```
 
-1. Get the Senzing workload statistics
+1. Get the Senzing workload statistics.
 
     ```console
     curl -X GET \
       ${SENZING_DEMO_URL}/stats
     ```
-1. Pretty printing.  If you would like the JSON response formatted, you can pipe the output to `jq`.  Example:
+1. If you would like the JSON HTTP response formatted, you can pipe the output to `jq`.  Example:
 
     ```console
     curl -X GET \
@@ -64,7 +64,7 @@ To test the service, open a web-browser (e.g. FireFox, Chrome, Safari, MS Explor
     ./curl-commands.sh > curl-commands.out 2>&1
     ```
 
-    View results in ${GIT_REPOSITORY_DIR}/doc/curl-commands.out
+    View results in `${GIT_REPOSITORY_DIR}/doc/curl-commands.out`
 
 ## References
 
@@ -72,6 +72,8 @@ To test the service, open a web-browser (e.g. FireFox, Chrome, Safari, MS Explor
     1. [Spring initializr](https://start.spring.io/)
 
 ## Work-in-progress
+
+The following is incomplete work.  Disregard.
 
 1. Create a new datasource.
 
