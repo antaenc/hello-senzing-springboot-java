@@ -18,6 +18,11 @@ These instructions will install and run the web service.
 
 ## Test
 
+The following tests assume that the service is running.
+To start and run the service, see either
+[Debian-based "Run Demo"](doc/debian-based-installation.md#run-demo) or
+[RPM-based "Run Demo"](doc/rpm-based-installation.md#run-demo).
+
 ### Find port
 
 Normally the service runs on port 8080.
