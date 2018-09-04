@@ -9,8 +9,8 @@ These instructions have been tested with CentOS 7.2.
 1. [Set environment variables](#set-environment-variables)
 1. [Clone repository](#clone-repository)
 1. [Install Senzing](#install-senzing)
-1. [Build demo](#build-demo)
-1. [Run demo](#run-demo)
+1. [Build service](#build-service)
+1. [Run service](#run-service)
 1. [Clean up](#clean-up)
 
 ## Prerequisites
@@ -123,7 +123,7 @@ git clone ${GIT_REPOSITORY_URL}
       -Dpackaging=jar
     ```
 
-## Build Demo
+## Build Service
 
 1. Build JAR file.
 
@@ -132,7 +132,7 @@ git clone ${GIT_REPOSITORY_URL}
     mvn package
     ```
 
-## Run Demo
+## Run Service
 
 1. Open port 8080
 

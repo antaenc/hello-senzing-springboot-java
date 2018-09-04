@@ -20,8 +20,8 @@ These instructions will install and run the web service.
 
 The following tests assume that the service is running.
 To start and run the service, see either
-[Debian-based "Run Demo"](doc/debian-based-installation.md#run-demo) or
-[RPM-based "Run Demo"](doc/rpm-based-installation.md#run-demo).
+[Debian-based "Run Service"](doc/debian-based-installation.md#run-service) or
+[RPM-based "Run Service"](doc/rpm-based-installation.md#run-service).
 
 ### Find port
 
@@ -78,7 +78,7 @@ To test the service, open a web-browser (e.g. FireFox, Chrome, Safari, MS Explor
 
 ## Work-in-progress
 
-The following is incomplete work.  Disregard.
+The following is incomplete work. Disregard.  Do not copy to final GitHub site.
 
 1. Create a new datasource.
 
