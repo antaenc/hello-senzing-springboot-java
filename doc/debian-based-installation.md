@@ -57,11 +57,12 @@ export SENZING_USER=g2
 
 If not set, export `JAVA_HOME`.
 
-    ```console
-    if [ -z "${JAVA_HOME}" ]; \
-      then export JAVA_HOME=$(dirname $(dirname $(readlink -fn $(which javac)))); \
-    fi
-    ```
+```console
+  if [ -z "${JAVA_HOME}" ]; \
+    then export JAVA_HOME=$(dirname $(dirname $(readlink -fn $(which javac)))); \
+  fi
+```
+
 ## Create Senzing user
 
 Create a new user to install and run Senzing with (if not using an existing user):
